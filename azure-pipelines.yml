@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: docker run --rm -v ${PWD}/firmware:/workdir/project nordicplayground/nrfconnect-sdk:main west build -p always -b thingy91_nrf9160_ns --build-dir /workdir/project/build -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
+- script: docker run --rm -v /home/vsts/work/1/s:/workdir/project nordicplayground/nrfconnect-sdk:main west build -p always -b thingy91_nrf9160_ns --build-dir /workdir/project/build -- -DOVERLAY_CONFIG="overlay-azure.conf;overlay-debug.conf;asset-tracker-cloud-firmware-azure.conf;firmware.conf"
   displayName: 'Build Nordic SDK in Docker'
